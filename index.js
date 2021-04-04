@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 var query = require('samp-query')
-const token = 'TOKEN';  // DiscordBot Token
+const token = 'NzgxNTg2MDI1MzIyOTA1NjEw.X7_ytQ.JwtCfhLf23zqcymA8bdYrxDK0EM';  // DiscordBot Token
 const PREFIX = '*'; // Prefix stavite po zelji
 var version = '1.0';
 var servers = {};
@@ -12,9 +12,9 @@ var options = {
 }
 
 bot.on("ready", () => {
-    bot.guilds.forEach((guild) => { 
+    bot.guilds.cache.forEach((guild) => { 
          let defaultChannel = "";
-         guild.channels.forEach((channel) => {
+         guild.channels.cache.forEach((channel) => {
                if(channel.type == "text" && defaultChannel == "") {
                if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
                    defaultChannel = channel;
