@@ -37,7 +37,7 @@ bot.on("ready", () => {
                 .addField('Web', response.rules.weburl)
                 .addField('Online Players', `${response.online}/${response.maxplayers}`, true)
                 .addField('Hosted Tab', ':white_check_mark:', true)
-                .setFooter('Made by Momenzi#6717', 'https://www.sa-mp.com/samp_logo.png')
+                .setFooter('Made by Momenzi#7817', 'https://www.sa-mp.com/samp_logo.png')
                 bot.channels.get(`ID KANALA`).send(embed) // STAVITE ID PO ZELJI
             }
         })
