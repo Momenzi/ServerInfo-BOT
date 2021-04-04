@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const bot = new Discord.Client();
 var query = require('samp-query')
-const token = 'NzgxNTg2MDI1MzIyOTA1NjEw.X7_ytQ.JwtCfhLf23zqcymA8bdYrxDK0EM';  // DiscordBot Token
+const token = 'TOKEN';  // DiscordBot Token
 const PREFIX = '*'; // Prefix stavite po zelji
 var version = '1.0';
 var servers = {};
