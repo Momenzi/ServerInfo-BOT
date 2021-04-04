@@ -4,11 +4,9 @@ const bot = new Discord.Client();
 var query = require('samp-query')
 const token = 'TOKEN';  // DiscordBot Token
 const PREFIX = '*'; // Prefix stavite po zelji
-var version = '1.0';
-var servers = {};
 var options = {
-    host: '185.169.134.107', // Vas IP npr. Arizona 
-    port: 7777 // PORT
+    host: '217.79.189.195', // Vas IP npr. Arizona 
+    port: 9131 // PORT
 }
 
 bot.on("ready", () => {
@@ -24,24 +22,22 @@ bot.on("ready", () => {
          setInterval (function () 
          {
             query (options, (error, response) => {
+            let embed = new Discord.MessageEmbed()
+            .setTitle(`${options.host}:${options.port} (${response.rules.version})`)
+            .setURL('https://ultimate-rpg.com/')
+            .setColor('#2ecc71')
+            .addField('Hostname', response.hostname)
+            .addField('Gamemode', response.gamemode)
+            .addField('Web', response.rules.weburl)
+            .addField('Online Players', `${response.online}/${response.maxplayers}`, true)
+            .addField('Hosted Tab', ':white_check_mark:', true)
+            .setFooter('Made by Momenzi#6717', 'https://www.sa-mp.com/samp_logo.png')
+            bot.channels.cache.get(`806687491838312469`).send(embed) // STAVITE ID PO ZELJI
             if (error) {
                 console.error(error)
             }
-            else {
-                let embed = new Discord.MessageEmbed()
-                .setTitle(`${options.host}:${options.port} (${response.rules.version})`)
-                .setURL('https://ultimate-rpg.com/')
-                .setColor('#2ecc71')
-                .addField('Hostname', response.hostname)
-                .addField('Gamemode', response.gamemode)
-                .addField('Web', response.rules.weburl)
-                .addField('Online Players', `${response.online}/${response.maxplayers}`, true)
-                .addField('Hosted Tab', ':white_check_mark:', true)
-                .setFooter('Made by Momenzi#7817', 'https://www.sa-mp.com/samp_logo.png')
-                bot.channels.get(`ID KANALA`).send(embed) // STAVITE ID PO ZELJI
-            }
         })
-         }, 10 * 360000);
+        }, 10 * 360000); // 360000
    })
 })
  
