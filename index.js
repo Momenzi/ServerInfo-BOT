@@ -7,7 +7,7 @@ const PREFIX = '*'; // Prefix stavite po zelji
 var version = '1.0';
 var servers = {};
 var options = {
-    host: 'IP', // Vas IP
+    host: '185.169.134.107', // Vas IP npr. Arizona 
     port: 7777 // PORT
 }
 
@@ -28,7 +28,7 @@ bot.on("ready", () => {
                 console.error(error)
             }
             else {
-                let embed = new Discord.RichEmbed()
+                let embed = new Discord.MessageEmbed()
                 .setTitle(`${options.host}:${options.port} (${response.rules.version})`)
                 .setURL('https://ultimate-rpg.com/')
                 .setColor('#2ecc71')
@@ -54,7 +54,7 @@ bot.on('message', message => {
                 console.error(error)
             }
             else {
-                let embed = new Discord.RichEmbed()
+                let embed = new Discord.MessageEmbed()
                 .setTitle(`${options.host}:${options.port} (${response.rules.version})`)
                 .setURL('https://ultimate-rpg.com/')
                 .setColor('#2ecc71')
